@@ -4,4 +4,7 @@ int pointerSize();
 int changeValue();
 int withinSameBlock(int *, int *);
 int withinArray(int *, int, int *);
-int invert(int, int, int);
+void swapInts(int *, int *);
+int stringLength(char *);
+int endianExperiment(int*);
+void selectionSort(int *, int);

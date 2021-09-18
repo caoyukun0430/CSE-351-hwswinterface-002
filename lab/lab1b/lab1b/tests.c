@@ -42,16 +42,6 @@ int test_thirdBits(void) {
   return result;
 }
 // Rating: 2
-int test_fitsBits(int x, int n)
-{
-  int TMin_n = -(1 << (n-1));
-  int TMax_n = (1 << (n-1)) - 1;
-  return x >= TMin_n && x <= TMax_n;
-}
-int test_sign(int x) {
-    if ( !x ) return 0;
-    return (x < 0) ? -1 : 1;
-}
 int test_getByte(int x, int n)
 {
     unsigned char byte;
@@ -71,28 +61,63 @@ int test_getByte(int x, int n)
     }
     return (int) (unsigned) byte;
 }
+int test_sign(int x) {
+    if ( !x ) return 0;
+    return (x < 0) ? -1 : 1;
+}
+unsigned test_floatNegate(unsigned uf) {
+    float f = u2f(uf);
+    float nf = -f;
+    if (isnan(f))
+ return uf;
+    else
+ return f2u(nf);
+}
+int test_floatIsEqual(unsigned uf, unsigned ug) {
+    float f = u2f(uf);
+    float g = u2f(ug);
+    return f == g;
+}
 // Rating: 3
 int test_logicalShift(int x, int n) {
   unsigned u = (unsigned) x;
   unsigned shifted = u >> n;
   return (int) shifted;
 }
+int test_invert(int x, int p, int n)
+{
+    int mask = 0x1;
+    int temp = x >> p;
+    int toadd = 0;
+    int i;
+    for (i = 0; i < n; i++) {
+        if (!(mask & temp)) {
+            toadd += (1 << i);
+        }
+        temp = temp >> 1;
+    }
+    mask = (1 << n) - 1;
+    mask = mask << p;
+    toadd = toadd << p;
+    return (x & ~mask) | toadd;
+}
+int test_fitsBits(int x, int n)
+{
+  int TMin_n = -(1 << (n-1));
+  // This convoluted way of generating TMax avoids overflow
+  int TMax_n = (int) ((1u << (n-1)) - 1u);
+  return x >= TMin_n && x <= TMax_n;
+}
 int test_addOK(int x, int y)
 {
     long long lsum = (long long) x + y;
     return lsum == (int) lsum;
 }
-// Rating: 4
+// Extra Credit Rating: 4
 int test_bang(int x)
 {
   return !x;
 }
-// Extra Credit: Rating: 3
-int test_conditional(int x, int y, int z)
-{
-  return x?y:z;
-}
-// Extra Credit: Rating: 4
 int test_isPower2(int x) {
   int i;
   for (i = 0; i < 31; i++) {
@@ -100,4 +125,8 @@ int test_isPower2(int x) {
       return 1;
   }
   return 0;
+}
+unsigned test_floatInt2Float(int x) {
+  float f = (float) x;
+  return f2u(f);
 }

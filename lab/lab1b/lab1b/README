@@ -19,9 +19,7 @@ btest.c		- The main btest program
   btest.h	- Used to build btest
   decl.c	- Used to build btest
   tests.c       - Used to build btest
-  tests-header.c- Used to build btest
 dlc*		- Rule checking compiler binary (data lab compiler)	 
-driver.pl*	- Driver program that uses btest and dlc to autograde bits.c
 fshow.c		- Utility for examining floating-point representations
 ishow.c		- Utility for examining integer representations
 
@@ -134,6 +132,4 @@ Example usages:
     Floating point value 2.131829405e-38
     Bit Representation 0x00e822bb, sign = 0, exponent = 0x01, fraction = 0x6822bb
     Normalized.  +1.8135598898 X 2^(-126)
-
-
 
