@@ -1,0 +1,24 @@
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ make cache-test TEST_CACHE=caches/mystery0.o
+gcc -Wall cache-test-skel.c caches/mystery0.o -static -o cache-test    
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ ./cache-test
+Cache block size: 64 bytes
+Cache size: 262144 bytes
+Cache associativity: 1
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ make cache-test TEST_CACHE=caches/mystery1.o
+gcc -Wall cache-test-skel.c caches/mystery1.o -static -o cache-test    
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ ./cache-test
+Cache block size: 8 bytes
+Cache size: 16384 bytes
+Cache associativity: 4
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ make cache-test TEST_CACHE=caches/mystery2.o
+gcc -Wall cache-test-skel.c caches/mystery2.o -static -o cache-test    
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ ./cache-test
+Cache block size: 16 bytes
+Cache size: 65536 bytes
+Cache associativity: 16
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ make cache-test TEST_CACHE=caches/mystery3.o
+gcc -Wall cache-test-skel.c caches/mystery3.o -static -o cache-test    
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab4/lab4$ ./cache-test
+Cache block size: 2 bytes
+Cache size: 131072 bytes
+Cache associativity: 2
