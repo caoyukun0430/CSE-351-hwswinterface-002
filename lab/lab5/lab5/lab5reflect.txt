@@ -1,0 +1,65 @@
+********************
+* Lab 5 Reflection *
+********************
+Name: 
+ID:   
+
+
+-----------------------------------------------------------
+1) Alignment: 
+   Reasoning:
+
+
+ 
+-----------------------------------------------------------
+2) Boundary Tag Size:  
+   Reasoning:
+
+
+
+-----------------------------------------------------------
+3) Footer?  
+   Explain:
+
+   
+
+-----------------------------------------------------------
+
+ecaoyuk@ecaoyuk-VirtualBox:~/CSE-351-hwswinterface-002/lab/lab5/lab5$ ./mdriver -V
+Using default tracefiles in traces/
+Measuring performance with the interval timer.
+
+Testing mm malloc
+Reading tracefile: amptjp-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: cccp-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: cp-decl-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: expr-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: coalescing-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: random-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: random2-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: binary-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+Reading tracefile: binary2-bal.rep
+Checking mm_malloc for correctness, efficiency, and performance.
+
+Results for mm malloc:
+trace  valid  util     ops      secs    Kops
+ 0       yes   93%    5694  0.001018    5596
+ 1       yes   94%    5848  0.001011    5786
+ 2       yes   96%    6648  0.001642    4048
+ 3       yes   97%    5380  0.001116    4820
+ 4       yes   99%   14400  0.001780    8088
+ 5       yes   87%    4800  0.001321    3634
+ 6       yes   84%    4800  0.001331    3607
+ 7       yes   55%   12000  0.005769    2080
+ 8       yes   50%   24000  0.007445    3224
+Total          84%   83570  0.022433    3725
+
+Perf index = 50 (util) + 40 (thru) = 90/100
